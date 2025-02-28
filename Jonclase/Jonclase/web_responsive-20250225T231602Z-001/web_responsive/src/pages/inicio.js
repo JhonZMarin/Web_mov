@@ -6,7 +6,7 @@ const modal = (texto) =>{
     p.textContent = texto;
 
     const btnClose = document.createElement('button');
-    btnClose.textContent = "Cerrar";
+    btnClose.textContent = "OLA XDXD";
     btnClose.classList.add('btn');
     btnClose.addEventListener('click', ()=>{
         div.remove();
