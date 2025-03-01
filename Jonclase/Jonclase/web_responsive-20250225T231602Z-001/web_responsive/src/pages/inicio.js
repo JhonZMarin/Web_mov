@@ -14,3 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".toggle-details").forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Botón clickeado"); // Verificar si el evento ocurre
+
+            const contact = this.closest(".contact");
+            const contactDetails = contact.querySelector(".contact-details");
+
+            if (contactDetails) {
+                console.log("Detalles encontrados, alternando visibilidad");
+
+                // Alternar la clase 'hidden'
+                contactDetails.classList.toggle("hidden");
+
+                // Cambiar el ícono del botón según el estado
+                if (contactDetails.classList.contains("hidden")) {
+                    this.textContent = "▼"; // Flecha hacia abajo (cerrado)
+                } else {
+                    this.textContent = "▲"; // Flecha hacia arriba (abierto)
+                }
+            } else {
+                console.log("No se encontraron detalles");
+            }
+        });
+    });
+});
