@@ -1,31 +1,120 @@
-@use 'variables' as *;
-.modal{
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 350px;
-    border-top: 1px solid #000000;
-    border-top-left-radius: 16px ;
-    border-top-right-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+$primary-color: #007bff;
+$secondary-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 8px;
 
-    p{
-        margin-inline: 24px;
-        margin-block: 32px;
-        font-size: 32px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: $secondary-color;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: $text-color;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 10px;
+
+    input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+    }
+
+    button {
+        background: $primary-color;
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: $border-radius;
+        cursor: pointer;
     }
 }
 
-@media (min-width:375px){
-    .modal{
-        width: 350px;
-        left: calc(50vw - 175px);
-        top: calc(50vh - 175px);
-        border: 1px solid #000000;
-        border-radius: 16px;
+.contact-list {
+    .contact {
+        background: white;
+        padding: 10px;
+        border-radius: $border-radius;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .toggle-details {
+                background: none;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+
+        .contact-details {
+            margin-top: 10px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: $border-radius;
+
+            &.hidden {
+                display: none;
+            }
+
+            .contact-actions {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 10px;
+
+                button {
+                    border: none;
+                    padding: 6px;
+                    border-radius: $border-radius;
+                    cursor: pointer;
+                    font-size: 14px;
+
+                    &.edit { background: #ffca28; }
+                    &.delete { background: #e74c3c; color: white; }
+                    &.call { background: #2ecc71; color: white; }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    
+    .tab {
+        flex: 1;
+        padding: 10px;
+        background: $primary-color;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+
+        &.active {
+            background: darken($primary-color, 10%);
+        }
     }
 }

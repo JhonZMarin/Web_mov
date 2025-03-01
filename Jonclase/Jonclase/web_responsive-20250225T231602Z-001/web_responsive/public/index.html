@@ -3,12 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebContactos</title>
-    <link rel="stylesheet" href="app.css">
+    <title>Contactos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main id="page">
-    </main>
-    <script src="cod.js"></script>
+    <div class="container">
+        <h1>Contactos</h1>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Buscar...">
+            <button id="search-btn">🔍</button>
+        </div>
+        <div id="contact-list" class="contact-list">
+            <div class="contact">
+                <div class="contact-header">
+                    <span class="contact-name">Pepe Pepe</span>
+                    <span class="contact-phone">311 253 0000</span>
+                    <button class="toggle-details">▼</button>
+                </div>
+                <div class="contact-details hidden">
+                    <p>Email: pepepepe@mail.com</p>
+                    <p>Tel: 320 456 7890</p>
+                    <div class="contact-actions">
+                        <span class="icon edit">✏️</span>
+                        <span class="icon delete">🗑️</span>
+                        <span class="icon call">📞</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact-header">
+                    <span class="contact-name">Juan Pérez</span>
+                    <span class="contact-phone">312 654 9876</span>
+                    <button class="toggle-details">▼</button>
+                </div>
+                <div class="contact-details hidden">
+                    <p>Email: juanperez@mail.com</p>
+                    <p>Tel: 321 789 6543</p>
+                    <div class="contact-actions">
+                        <span class="icon edit">✏️</span>
+                        <span class="icon delete">🗑️</span>
+                        <span class="icon call">📞</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="tab active">👤 Personas</button>
+            <button class="tab">🏢 Empresas</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
